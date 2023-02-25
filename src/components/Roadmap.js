@@ -1,5 +1,6 @@
 import Unit from "./Unit";
 import '../css/roadmap.css';
+import XPbar from "./elements/XPbar";
 
 const RoadMap = ({displayLesson, lid, logout, username}) => {
   return (
@@ -24,13 +25,16 @@ const RoadMap = ({displayLesson, lid, logout, username}) => {
       </div>
 			<div className='main-right-side-menu'>
 				<div className='profile-dropdown-wrapper'>
-					<div className='profile-dropdown'>
-						<button className='profile-dropdown-button'>{username}</button>
-						<div className='profile-dropdown-content'>
-							<button className='profile-dropdown-link'>Profile</button>
-							<button className='profile-dropdown-link' onClick={logout}>Log Out</button>
+					<div style={{height: "40vh"}}>
+						<div className='profile-dropdown'>
+							<button className='profile-dropdown-button'>{username}</button>
+							<div className='profile-dropdown-content'>
+								<button className='profile-dropdown-link'>Profile</button>
+								<button className='profile-dropdown-link' onClick={logout}>Log Out</button>
+							</div>
 						</div>
 					</div>
+					<div style={{margin: 'auto', width: 'fit-content'}}><XPbar max={125} value={80}/></div>
 				</div>
 			</div>
     </div>
