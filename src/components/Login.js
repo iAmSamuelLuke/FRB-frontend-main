@@ -36,8 +36,9 @@ const Login = ({func, setUserXP}) => {
 		 			valid = true
 					if (valid === true){
 		 				console.log(data[key].lesson_id)
-		 				func(data[key].lesson_id);
+		 				func(data[key].lesson_id, data[key].username);
 						 setUserXP(data[key].xp);
+
 		 				return;
 					}
 		 		}

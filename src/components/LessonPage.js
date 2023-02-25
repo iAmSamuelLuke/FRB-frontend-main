@@ -53,6 +53,8 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
             displayMain(1, username);
         }
         else if (current === lesson.length - 1) {
+            console.log(current)
+            console.log(lesson.length)
             document.getElementById('next-button').innerHTML = 'Finish Lesson';
         }
         else if (correct === 'Correct!') {

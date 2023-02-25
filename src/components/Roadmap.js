@@ -2,7 +2,7 @@ import Unit from "./Unit";
 import '../css/roadmap.css';
 import XPbar from "./elements/XPbar";
 
-const RoadMap = ({displayLesson, lid, logout, username}) => {
+const RoadMap = ({displayLesson, lid, logout, username, userXp}) => {
   return (
     <div className='roadmap-wrapper'>
 			<div className='main-left-side-menu'>
@@ -34,7 +34,7 @@ const RoadMap = ({displayLesson, lid, logout, username}) => {
 							</div>
 						</div>
 					</div>
-					<div style={{margin: 'auto', width: 'fit-content'}}><XPbar max={125} value={80}/></div>
+					<div style={{margin: 'auto', width: 'fit-content'}}><XPbar max={125} value={userXp}/></div>
 				</div>
 			</div>
     </div>
