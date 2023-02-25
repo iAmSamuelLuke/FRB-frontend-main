@@ -25,7 +25,6 @@ function App() {
     setLogin(0);
     SetlessonID(id);
     setMain(1);
-    console.log(lesson_id);
   }
 
   const show_login = () => {
