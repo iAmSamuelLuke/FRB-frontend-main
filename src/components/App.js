@@ -20,7 +20,11 @@ function App() {
   // Lesson that the user is ready for
   const [lesson_id, SetlessonID] = useState(null);
 
-  const show_main = (id) => {
+  // The username that is currently logged in 
+  const [user, setUser] = useState('');
+
+  const show_main = (id, username) => {
+    setUser(username);
     setLesson(0);
     setLogin(0);
     SetlessonID(id);
@@ -44,8 +48,8 @@ function App() {
   return (
     <div className="App">
       {(login === 1) ? <Login func={show_main}/> : null}
-      {(main === 1) ? <RoadMap displayLesson={show_lesson} lid={lesson_id} logout={show_login}/> : null}
-      {(lesson === 1) ? <LessonPage id = {id} displayMain={show_main}/> : null}
+      {(main === 1) ? <RoadMap displayLesson={show_lesson} lid={lesson_id} logout={show_login} username={user}/> : null}
+      {(lesson === 1) ? <LessonPage id = {id} displayMain={show_main} username={user}/> : null}
     </div>
   );
 }

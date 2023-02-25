@@ -43,10 +43,10 @@ const Login = ({func}) => {
 		// 	}
 		// })
 		// func is called with data[key].lesson_id in the fetch above, 1 is a placeholder
-		func(1);
+		func(1, 'Peter');
 	}
 
-  return (
+  	return (
 		<div>
 			<LoginStyle0> 
 				<DivStyle>Please login to continue</DivStyle>
@@ -70,7 +70,7 @@ export default Login;
 
 const LoginStyle0 = styled.div `
   margin: auto;
-	margin-top: 8vh;
+margin-top: 8vh;
   display: flex;
   flex-direction: column;
   width: 40vw;

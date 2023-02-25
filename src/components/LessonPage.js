@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import '../css/lessonpage.css';
 
-const LessonPage = ({id, displayMain}) => {
+const LessonPage = ({id, displayMain, username}) => {
 
     const [lesson, setLesson] = useState([])
     const [current, setCurrent] = useState(0);
@@ -35,7 +35,7 @@ const LessonPage = ({id, displayMain}) => {
         let temp = document.getElementById('next-button').innerHTML;
         let temp2 = document.getElementById('correct-answer').innerHTML;
         if (temp === 'Finish Lesson') {
-            displayMain();
+            displayMain(1, username);
         }
         else if (current === lesson.length - 1) {
             document.getElementById('next-button').innerHTML = 'Finish Lesson';
