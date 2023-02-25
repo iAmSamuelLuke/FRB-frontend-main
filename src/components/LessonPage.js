@@ -50,7 +50,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
         let temp = document.getElementById('next-button').innerHTML;
         let temp2 = document.getElementById('correct-answer').innerHTML;
         if (temp === 'Finish Lesson') {
-            displayMain();
+            displayMain(1, username);
         }
         else if (current === lesson.length - 1) {
             document.getElementById('next-button').innerHTML = 'Finish Lesson';

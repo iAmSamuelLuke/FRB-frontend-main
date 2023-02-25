@@ -22,7 +22,11 @@ function App() {
 
   const[xp, setXP] = useState(0);
 
-  const show_main = (id) => {
+  // The username that is currently logged in 
+  const [user, setUser] = useState('');
+
+  const show_main = (id, username) => {
+    setUser(username);
     setLesson(0);
     setLogin(0);
     SetlessonID(id);
