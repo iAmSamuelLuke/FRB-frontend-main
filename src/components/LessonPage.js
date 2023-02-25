@@ -54,7 +54,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
         if (temp === 'Finish Lesson') {
             displayMain(1, username);
         }
-        else if (current === lesson.length - 1) {
+        else if (current === lesson.length - 1 && temp2 === 'Correct!') {
             console.log(current)
             console.log(lesson.length)
             document.getElementById('next-button').innerHTML = 'Finish Lesson';
