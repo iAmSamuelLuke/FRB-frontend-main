@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      {(login === 1) ? <Login func={show_main}/> : null}
+      {(login === 1) ? <Login func={show_main} setUserXP={setXP}/> : null}
       {(main === 1) ? <RoadMap displayLesson={show_lesson} lid={lesson_id} logout={show_login} username={user}/> : null}
       {(lesson === 1) ? <LessonPage id={id} displayMain={show_main} setUserXP={setXP} currXP={xp} username={user}/> : null}
     </div>

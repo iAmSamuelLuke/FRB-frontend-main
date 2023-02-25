@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Login = ({func}) => {
+const Login = ({func, setUserXP}) => {
 
   const print_creds = () => {
     var username = document.getElementById('username').value;
@@ -37,13 +37,14 @@ const Login = ({func}) => {
 					if (valid === true){
 		 				console.log(data[key].lesson_id)
 		 				func(data[key].lesson_id);
+						 setUserXP(data[key].xp);
 		 				return;
 					}
 		 		}
 		 	}
 		 })
 		// func is called with data[key].lesson_id in the fetch above, 1 is a placeholder
-		func(1, 'Peter');
+		//func(1, 'Peter');
 	}
 
   	return (
