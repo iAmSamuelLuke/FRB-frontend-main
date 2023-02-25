@@ -28,8 +28,9 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
 
     const [lesson, setLesson] = useState([]);
     const [current, setCurrent] = useState(0);
-    const[correct, setCorrect] = useState("");
-    //const[xp, setXP] = useState(0);
+    const [correct, setCorrect] = useState('');
+    const [xp, setXP] = useState(0);
+    const [cancontinue, setCanContinue] = useState(false);
 
     // fetch lesson object based on the id variable here
     const fetch_lesson = (lid) => {
@@ -78,6 +79,9 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
             }
         }
         else setCorrect('Sorry, try again');
+
+        setCanContinue((temp === 'Correct!') ? true : false);
+
     }
 
 
@@ -108,7 +112,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
                 </div>
                 <div className='lessonpage-button-pane'>
                     <button className='lessonpage-button' onClick={check_answer} id='check-button'>Check Answer</button>
-                    <button className='lessonpage-button' onClick={view_next} id='next-button'>Next Question</button>
+                    <button className='lessonpage-button' onClick={view_next} id='next-button' disabled={cancontinue}>Next Question</button>
                 </div>
                 <div id='correct-answer'>{correct}</div>
             </div> : null
