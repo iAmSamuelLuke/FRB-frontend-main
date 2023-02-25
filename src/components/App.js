@@ -43,8 +43,8 @@ function App() {
   return (
     <div className="App">
       {(login === 1) ? <Login func={show_main}/> : null}
-      {(main === 1) ? <RoadMap displayLesson={show_lesson} lid={lesson_id}/> : null}
-      {(lesson === 1) ? <LessonPage id = {id}/> : null}
+      {(main === 1) ? <RoadMap displayLesson={show_lesson} lid={lesson_id} logout={show_login}/> : null}
+      {(lesson === 1) ? <LessonPage id = {id} displayMain={show_main}/> : null}
     </div>
   );
 }

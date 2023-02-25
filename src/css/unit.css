@@ -4,11 +4,19 @@
 }
 
 .unit-header {
-    width: fit-content;
+    width: 90%;
+    height: 10vh;
+    padding-top: 2.5vh;
+    padding-left: 2.5vh;
     font-size: 5vh;
     font-family: sans-serif;
     margin: auto;
     margin-bottom: 25px;
+    border-radius: 2.5vh;
+    background-color: rgb(118, 125,248);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 7px rgb(106, 108, 238);
 }
 
 .unit-lessons {

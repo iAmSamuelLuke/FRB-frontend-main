@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import '../css/lessonpage.css';
 
-const LessonPage = ({id}) => {
+const LessonPage = ({id, displayMain}) => {
 
     let lid = [];
 
@@ -45,17 +45,39 @@ const LessonPage = ({id}) => {
     }, [])
 
     const view_next = () => {
-        setCurrent(current + 1);
+        let temp = document.getElementById('next-button').innerHTML;
+        let temp2 = document.getElementById('correct-answer').innerHTML;
+        if (temp === 'Finish Lesson') {
+            displayMain();
+        }
+        else if (current === lesson.length - 1) {
+            document.getElementById('next-button').innerHTML = 'Finish Lesson';
+        }
+        else if (correct === 'Correct!') {
+            console.log(temp2);
+            setCurrent(current + 1);
+            setCorrect('');
+            document.getElementById('answer').value = '';
+        }
     }
 
-    const check_Answer = () => {
-        let answer = lesson[current][0];
-        if(answer == input){
-            console.log("correct")
+    const check_answer = () => {
+        let attempt = document.getElementById('answer').value.toUpperCase();
+        if (attempt === lesson[current].answer.toUpperCase()) {
+            setCorrect('Correct!');
+            setXP(xp + 5);
         }
-        else
-            console.log("incorrect")
+        else setCorrect('Sorry, try again');
     }
+
+    // const check_Answer = () => {
+    //     let answer = lesson[current][0];
+    //     if(answer == input){
+    //         console.log("correct")
+    //     }
+    //     else
+    //         console.log("incorrect")
+    // }
 
     const handleInput = event => {
         setInput(event.target.value);
@@ -69,13 +91,13 @@ const LessonPage = ({id}) => {
                 <div className="lessonpage-question">{lesson[current][1]}?</div>
                 <div className='lessonpage-answer-form'>
                     <div className='lessonpage-answer-label'>Type your answer: </div>
-                    <input className='lessonpage-answer-input' onChange={e => handleInput(e)}></input>
+                    <input className='lessonpage-answer-input' id='answer'></input>
                 </div>
                 <div className='lessonpage-button-pane'>
-                    <button className='lessonpage-button' onClick={check_Answer}>Check Answer</button>
-                    <button className='lessonpage-button' onClick={view_next}>Next Question</button>
+                    <button className='lessonpage-button' onClick={check_answer} id='check-button'>Check Answer</button>
+                    <button className='lessonpage-button' onClick={view_next} id='next-button'>Next Question</button>
                 </div>
-                <div>right/wrong</div>
+                <div id='correct-answer'>{correct}</div>
             </div> : null
             }
         </div>

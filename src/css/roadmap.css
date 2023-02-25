@@ -1,0 +1,61 @@
+.roadmap-wrapper {
+    display: flex;
+}
+
+.main-left-side-menu, .main-right-side-menu {
+    width: 25vw;
+    text-align: center;
+}
+
+.main-left-side-menu {
+    border-right: 5px solid grey;
+}
+
+.main-right-side-menu {
+    border-left: 5px solid grey;
+}
+
+.profile-dropdown-content {
+    display: none;
+}
+
+.profile-dropdown {
+    position: fixed;
+    margin-left: 13vw;
+    width: fit-content;
+    float: right;
+}
+
+.profile-dropdown:hover .profile-dropdown-content{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.profile-dropdown:hover .profile-dropdown-button {
+    background-color: lightgrey;
+}
+
+.profile-dropdown-button {
+    border: none;
+    background-color: inherit;
+    font-weight: bold;
+    color: rgb(70, 69, 69);
+    width: 12vw;
+    height: 4vw;
+    cursor: pointer;
+}
+
+.profile-dropdown-link {
+    height: 4vw;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-dropdown-link:hover {
+    background-color: lightgrey;
+    margin: none;
+}
+
+
+
