@@ -73,7 +73,7 @@ const LessonPage = ({id, displayMain, username}) => {
                 </div>
                 <div className='lessonpage-button-pane'>
                     <button className='lessonpage-button' onClick={check_answer} id='check-button'>Check Answer</button>
-                    <button className='lessonpage-button' onClick={view_next} id='next-button' disabled={cancontinue}>Next Question</button>
+                    <button className='lessonpage-button' onClick={view_next} id='next-button' disabled={!cancontinue}>Next Question</button>
                 </div>
                 <div id='correct-answer'>{correct}</div>
             </div> : null
