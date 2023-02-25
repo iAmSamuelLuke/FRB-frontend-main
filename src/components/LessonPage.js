@@ -14,7 +14,7 @@ const LessonPage = ({id}) => {
                 answer: 'first answer'
             },
             {
-                question: 'second question',
+                question: 'second question', 
                 answer: 'second answer'
             },
             {
@@ -35,11 +35,19 @@ const LessonPage = ({id}) => {
 
     return (
         <div>
-            {(lesson.length > 0 && current <= lesson.length) ?
-                <div className="lessonpage-wrapper">
-                    <div className="question">{lesson[current].question}?</div>
-                    <button className='' onClick={view_next}>Next Question</button>
-                </div> : null
+            {(lesson.length > 0 && current <= lesson.length) ? 
+            <div className="lessonpage-wrapper">
+                <div className="lessonpage-question">{lesson[current].question}?</div>
+                <div className='lessonpage-answer-form'>
+                    <div className='lessonpage-answer-label'>Type your answer: </div>
+                    <input className='lessonpage-answer-input'></input>
+                </div>
+                <div className='lessonpage-button-pane'>
+                    <button className='lessonpage-button'>Check Answer</button>
+                    <button className='lessonpage-button' onClick={view_next}>Next Question</button>
+                </div>
+                <div>right/wrong</div>
+            </div> : null
             }
         </div>
     )

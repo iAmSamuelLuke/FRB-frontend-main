@@ -1,7 +1,7 @@
 import Lesson from "./elements/Lesson";
 import '../css/unit.css';
 
-const Unit = ({number, displayLesson, id}) => {
+const Unit = ({number, displayLesson, id, lid}) => {
     return (
         <div className="unit-graphic-wrapper">
             <p className="unit-header">Unit {number}</p>

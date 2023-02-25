@@ -1,0 +1,39 @@
+.lessonpage-wrapper {
+    width: 40vw;
+    margin: auto;
+    margin-top: 18vh;
+}
+
+.lessonpage-question {
+    justify-content: left;
+    font-size: 5vh;
+    font-family: sans-serif;
+    color: rgb(70, 69, 69);
+    margin-bottom: 5vh;
+}
+
+.lessonpage-answer-form {
+    display: flex;
+}
+
+.lessonpage-answer-label {
+    width: 20vw;
+    font-size: 3.5vh;
+    font-family: sans-serif;
+    color: rgb(70, 69, 69);
+}
+
+.lessonpage.answer-input {
+    width: 20vw;
+}
+
+.lessonpage-button-pane {
+    width: 25vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lessonpage-button {
+    width: 10vw;
+}

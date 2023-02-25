@@ -1,6 +1,6 @@
 import Unit from "./Unit";
 
-const RoadMap = ({displayLesson}) => {
+const RoadMap = ({displayLesson, lid}) => {
     return (
         <div>
             <Unit displayLesson={displayLesson} number={1} id={0}/>
