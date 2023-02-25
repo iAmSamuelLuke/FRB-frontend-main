@@ -6,6 +6,7 @@ const LessonPage = ({id, displayMain}) => {
     const [lesson, setLesson] = useState([])
     const [current, setCurrent] = useState(0);
     const [correct, setCorrect] = useState('');
+    const [xp, setXP] = useState(0);
 
     // fetch lesson object based on the id variable here
     const fetch_lesson = async () => {
@@ -51,6 +52,7 @@ const LessonPage = ({id, displayMain}) => {
         let attempt = document.getElementById('answer').value.toUpperCase();
         if (attempt === lesson[current].answer.toUpperCase()) {
             setCorrect('Correct!');
+            setXP(xp + 5);
         }
         else setCorrect('Sorry, try again');
     }

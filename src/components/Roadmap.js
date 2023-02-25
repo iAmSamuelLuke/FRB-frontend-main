@@ -16,8 +16,8 @@ const RoadMap = ({displayLesson, lid, logout}) => {
 				<div className='profile-dropdown'>
 					<button className='profile-dropdown-button'>My Profile</button>
 					<div className='profile-dropdown-content'>
-						<p className='profile-dropdown-link'>Profile</p>
-						<p className='profile-dropdown-link' onClick={logout}>Log Out</p>
+						<button className='profile-dropdown-link'>Profile</button>
+						<button className='profile-dropdown-link' onClick={logout}>Log Out</button>
 					</div>
 				</div>
 

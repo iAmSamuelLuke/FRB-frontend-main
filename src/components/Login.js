@@ -96,9 +96,24 @@ const DivStyle = styled.h1 `
 
 const ButtonStyle = styled.button `
 	width: 30vw;
-	height: 5vh;
+	height: 8vh;
 	margin-top: 5vh;
-	background-color: blue;
+	background-color: rgb(48, 48, 218);
+	border: none;
+	border-radius: 2vh;
+	color: white;
+	font-size: 5vh;
+	font-weight: bold;
+	font-family: sans-serif;
+	box-shadow: 0 7px rgb(25, 25, 180);
+	cursor: pointer;
+	:hover {
+		background-color: rgb(68, 68, 248);
+	}
+	:active {
+		box-shadow: none;
+		transform: translateY(7px);
+	}
 `
 
 

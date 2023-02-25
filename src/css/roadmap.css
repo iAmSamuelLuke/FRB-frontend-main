@@ -5,7 +5,14 @@
 .main-left-side-menu, .main-right-side-menu {
     width: 25vw;
     text-align: center;
-    border: 5px solid black;
+}
+
+.main-left-side-menu {
+    border-right: 5px solid grey;
+}
+
+.main-right-side-menu {
+    border-left: 5px solid grey;
 }
 
 .profile-dropdown-content {
@@ -13,11 +20,15 @@
 }
 
 .profile-dropdown {
+    position: fixed;
+    margin-left: 13vw;
     width: fit-content;
+    float: right;
 }
 
 .profile-dropdown:hover .profile-dropdown-content{
-    display: block;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
 }
 
@@ -29,6 +40,22 @@
     border: none;
     background-color: inherit;
     font-weight: bold;
-    color: gray;
+    color: rgb(70, 69, 69);
+    width: 12vw;
+    height: 4vw;
+    cursor: pointer;
 }
+
+.profile-dropdown-link {
+    height: 4vw;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-dropdown-link:hover {
+    background-color: lightgrey;
+    margin: none;
+}
+
+
 
