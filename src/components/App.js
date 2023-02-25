@@ -20,6 +20,8 @@ function App() {
   // Lesson that the user is ready for
   const [lesson_id, SetlessonID] = useState(null);
 
+  const[xp, setXP] = useState(0);
+
   const show_main = (id) => {
     setLesson(0);
     setLogin(0);
@@ -40,11 +42,13 @@ function App() {
     setLesson(1);
   }
 
+  console.log(xp);
+
   return (
     <div className="App">
       {(login === 1) ? <Login func={show_main}/> : null}
       {(main === 1) ? <RoadMap displayLesson={show_lesson} lid={lesson_id} logout={show_login}/> : null}
-      {(lesson === 1) ? <LessonPage id = {id} displayMain={show_main}/> : null}
+      {(lesson === 1) ? <LessonPage id={id} displayMain={show_main} setUserXP={setXP} currXP={xp} /> : null}
     </div>
   );
 }

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import '../css/lessonpage.css';
 
-const LessonPage = ({id, displayMain}) => {
+const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
 
     let lid = [];
+    const username = "squanch";
 
     async function getContent() {
         let response = await fetch("http://localhost:8080/lessons/getAllLessons", {
@@ -25,7 +26,8 @@ const LessonPage = ({id, displayMain}) => {
 
     const [lesson, setLesson] = useState([]);
     const [current, setCurrent] = useState(0);
-    const[input, setInput] = useState("");
+    const[correct, setCorrect] = useState("");
+    //const[xp, setXP] = useState(0);
 
     // fetch lesson object based on the id variable here
     const fetch_lesson = (lid) => {
@@ -63,25 +65,29 @@ const LessonPage = ({id, displayMain}) => {
 
     const check_answer = () => {
         let attempt = document.getElementById('answer').value.toUpperCase();
-        if (attempt === lesson[current].answer.toUpperCase()) {
+        if (attempt === lesson[current][0].toUpperCase()) {
             setCorrect('Correct!');
-            setXP(xp + 5);
+            setUserXP(currXP + 5);
+            updateXP(username, currXP);
         }
         else setCorrect('Sorry, try again');
     }
 
-    // const check_Answer = () => {
-    //     let answer = lesson[current][0];
-    //     if(answer == input){
-    //         console.log("correct")
-    //     }
-    //     else
-    //         console.log("incorrect")
-    // }
 
-    const handleInput = event => {
-        setInput(event.target.value);
-        console.log(input);
+
+    const updateXP = async (username, xp) => {
+
+        let user = {username, xp};
+
+        let response = await fetch('http://localhost:8080/users/setXP', {
+            method: 'POST',
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify(user)
+        });
+
+        let data = await response.json();
+        console.log(data);
+
     }
 
     return (
