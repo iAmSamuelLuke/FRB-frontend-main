@@ -13,15 +13,15 @@ const LessonPage = ({id, displayMain}) => {
             {
                 question: 'first question',
                 answer: 'first answer'
-            },
-            {
-                question: 'second question', 
-                answer: 'second answer'
-            },
-            {
-                question: 'third question',
-                answer: 'third answer'
             }
+            // {
+            //     question: 'second question', 
+            //     answer: 'second answer'
+            // },
+            // {
+            //     question: 'third question',
+            //     answer: 'third answer'
+            // }
         ]);
     }
 

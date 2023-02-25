@@ -1,0 +1,9 @@
+.roadmap-wrapper {
+    display: flex;
+}
+
+.main-left-side-menu, .main-right-side-menu {
+    width: 25vw;
+    text-align: center;
+    background-color: black;
+}
