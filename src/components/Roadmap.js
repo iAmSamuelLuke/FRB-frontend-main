@@ -34,7 +34,7 @@ const RoadMap = ({displayLesson, lid, logout, username, userXp}) => {
 							</div>
 						</div>
 					</div>
-					<div style={{margin: 'auto', width: 'fit-content'}}><XPbar max={125} value={userXp}/></div>
+					<div style={{margin: 'auto', width: 'fit-content'}}><XPbar max={125} value={userXp % 125}/></div>
 				</div>
 			</div>
     </div>
