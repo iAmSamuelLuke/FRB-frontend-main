@@ -63,6 +63,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
         else if (correct === 'Correct!') {
             console.log(temp2);
             setCurrent(current + 1);
+            setCanContinue(false);
             setCorrect('');
             document.getElementById('answer').value = '';
         }
@@ -73,14 +74,13 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
         let temp = document.getElementById('correct-answer').innerHTML;
         if (attempt === lesson[current][1].toUpperCase()) {
             setCorrect('Correct!');
+            setCanContinue(true);
             if (temp!=='Correct!') {
                 setUserXP(currXP + 5);
                 updateXP(username, currXP);
             }
         }
-        else setCorrect('Sorry, try again');
-
-        setCanContinue((temp === 'Correct!') ? true : false);
+        else {setCorrect('Sorry, try again'); setCanContinue(false); }
 
     }
 
@@ -112,7 +112,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
                 </div>
                 <div className='lessonpage-button-pane'>
                     <button className='lessonpage-button' onClick={check_answer} id='check-button'>Check Answer</button>
-                    <button className='lessonpage-button' onClick={view_next} id='next-button' disabled={cancontinue}>Next Question</button>
+                    <button className='lessonpage-button' onClick={view_next} id='next-button' disabled={!cancontinue}>Next Question</button>
                 </div>
                 <div id='correct-answer'>{correct}</div>
             </div> : null
