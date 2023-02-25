@@ -5,5 +5,30 @@
 .main-left-side-menu, .main-right-side-menu {
     width: 25vw;
     text-align: center;
-    background-color: black;
+    border: 5px solid black;
 }
+
+.profile-dropdown-content {
+    display: none;
+}
+
+.profile-dropdown {
+    width: fit-content;
+}
+
+.profile-dropdown:hover .profile-dropdown-content{
+    display: block;
+    cursor: pointer;
+}
+
+.profile-dropdown:hover .profile-dropdown-button {
+    background-color: lightgrey;
+}
+
+.profile-dropdown-button {
+    border: none;
+    background-color: inherit;
+    font-weight: bold;
+    color: gray;
+}
+
