@@ -33,6 +33,7 @@ const Login = ({func}) => {
 			if(data[key].username == username){
 				if(data[key].password == password){
 					console.log("you did it")
+					console.log("yay")
 					valid = true
 					if (valid == true){
 						console.log(data[key].lesson_id)
