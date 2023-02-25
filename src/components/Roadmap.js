@@ -1,13 +1,13 @@
 import Unit from "./Unit";
 
-const RoadMap = (lid) => {
+const RoadMap = ({displayLesson, lid}) => {
     console.log(lid);
     return (
         <div>
-            <Unit number={1}/>
-            <Unit number={2}/>
+            <Unit displayLesson={displayLesson} number={1} id={0}/>
+            <Unit displayLesson={displayLesson} number={2} id={1}/>
         </div>
     )
 }
 
-export default RoadMap;
+export default RoadMap;;
