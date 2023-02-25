@@ -1,0 +1,50 @@
+.xp-bar{
+    width: 20vw;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    height:100px;
+    padding:0px;
+}
+progress {
+    display:inline-block;
+    width: 20vw;
+    height:20px;
+    padding: 5px 0 0 0;
+    margin:0;
+    background: none;
+    border:0;
+    border-radius:15px;
+    text-align:left;
+    position:relative;
+    font-size: 0.8em;
+}
+progress::-webkit-progress-bar{
+    height:11px ;
+    width: 20vw;
+    /* margin: 0 auto;   */
+    background-color: #CCC;
+    border-radius: 15px;
+    box-shadow: 0px 0px 6px #777 inset ;
+}
+progress::-webkit-progress-value{
+    display:inline-block;
+    float: left;
+    height:11px;
+    margin:0px-10px 0 0;
+    background: rgb(255, 203, 60);
+    border-radius: 15px;
+    box-shadow: 0px 0px 6px #777 inset;
+}
+progress:after{
+    margin:-26px;
+    padding:0;
+    display:inline-block;
+    float:left;
+    content: att(value) '%';
+}
+
+.xpbar-wrapper {
+    align-items: center;
+}

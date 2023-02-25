@@ -70,11 +70,11 @@ const Login = ({func, setUserXP}) => {
 export default Login;
 
 const LoginStyle0 = styled.div `
-  margin: auto;
-margin-top: 8vh;
-  display: flex;
-  flex-direction: column;
-  width: 40vw;
+	margin: auto;
+	margin-top: 8vh;
+	display: flex;
+	flex-direction: column;
+	width: 40vw;
 `
 
 const LoginStyle1 = styled.div `
@@ -82,6 +82,7 @@ const LoginStyle1 = styled.div `
 	margin-top: 3vh;
 	display: flex;
 `
+
 const Blocker = styled.div `
 	display: flex;
 	flex-direction: column;
@@ -91,7 +92,7 @@ const Blocker = styled.div `
 `
 
 const DivStyle = styled.h1 `
-  margin: auto;
+  	margin: auto;
 	margin-top: 0px;
 `
 
