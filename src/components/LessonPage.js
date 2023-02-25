@@ -7,6 +7,7 @@ const LessonPage = ({id, displayMain, username}) => {
     const [current, setCurrent] = useState(0);
     const [correct, setCorrect] = useState('');
     const [xp, setXP] = useState(0);
+    const [cancontinue, setCanContinue] = useState(false);
 
     // fetch lesson object based on the id variable here
     const fetch_lesson = async () => {
@@ -37,7 +38,7 @@ const LessonPage = ({id, displayMain, username}) => {
         if (temp === 'Finish Lesson') {
             displayMain(1, username);
         }
-        else if (current === lesson.length - 1) {
+        else if (current === lesson.length - 1 && temp2==='Correct!') {
             document.getElementById('next-button').innerHTML = 'Finish Lesson';
         }
         else if (correct === 'Correct!') {
@@ -50,11 +51,15 @@ const LessonPage = ({id, displayMain, username}) => {
 
     const check_answer = () => {
         let attempt = document.getElementById('answer').value.toUpperCase();
-        if (attempt === lesson[current].answer.toUpperCase()) {
+        let temp = document.getElementById('correct-answer').innerHTML;
+        if (attempt === lesson[current].answer.toUpperCase() && temp!=='Correct!') {
             setCorrect('Correct!');
             setXP(xp + 5);
         }
         else setCorrect('Sorry, try again');
+
+        setCanContinue((temp === 'Correct!') ? true : false);
+
     }
 
     return (
