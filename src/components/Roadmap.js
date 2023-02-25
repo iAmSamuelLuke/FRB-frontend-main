@@ -1,6 +1,7 @@
 import Unit from "./Unit";
 
-const RoadMap = () => {
+const RoadMap = (lid) => {
+    console.log(lid);
     return (
         <div>
             <Unit number={1}/>

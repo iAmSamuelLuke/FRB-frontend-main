@@ -35,7 +35,8 @@ const Login = ({func}) => {
 					console.log("you did it")
 					valid = true
 					if (valid == true){
-						func(data[key].id);
+						console.log(data[key].lesson_id)
+						func(data[key].lesson_id);
 						return;
 					}
 				}
