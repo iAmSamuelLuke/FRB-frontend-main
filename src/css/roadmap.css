@@ -80,42 +80,6 @@
     color: rgb(70, 69, 69);
 }
 
-
-
-
-
-
-
-/*wrapper class for entire side menu*/
-.left-side-menu{
- 	background: rgb(104, 5, 5);
- 	position: fixed;
- 	top: 0;
- 	left: 0;
- 	width:225px;
- 	height: 100%;
- 	padding: 20px 0;
- 	transition: all 0.5s ease;
-}
- /* styling for the items/buttons in the left side
-// 	menu list - codelingo, lesson1, lesson2, etc..*/
-.left-side-menu
-.left-side-menu-list ul li a{
- 	display: block;
- 	padding: 13px 30px;
- 	border-bottom: 1px solid #8d1010;
- 	color: rgb(241, 237, 237);
- 	font-size: 16px;
- 	position: relative;
-}
-/*styling for the icons in the left side menu list*/
-.left-side-menu
-.left-side-menu-list ul li a .icon{
- 	color: #ffffff;
- 	width: 30px;
- 	display: inline-block;
-}
-
 *{
     list-style: none;
     text-decoration: none;
