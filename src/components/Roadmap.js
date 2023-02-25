@@ -1,7 +1,6 @@
 import Unit from "./Unit";
 
-const RoadMap = ({displayLesson, lid}) => {
-    console.log(lid);
+const RoadMap = ({displayLesson}) => {
     return (
         <div>
             <Unit displayLesson={displayLesson} number={1} id={0}/>
@@ -10,4 +9,4 @@ const RoadMap = ({displayLesson, lid}) => {
     )
 }
 
-export default RoadMap;;
+export default RoadMap;

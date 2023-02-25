@@ -1,13 +1,12 @@
 .unit-graphic-wrapper {
     width: 50vw;
-    height: 100vh;
-    min-height: 450px;
-    border: 1px solid black;
+    height: fit-content;
 }
 
 .unit-header {
     width: fit-content;
-    border: 1px solid black;
+    font-size: 5vh;
+    font-family: 'Times New Roman', Times, serif;
     margin: auto;
     margin-bottom: 25px;
 }

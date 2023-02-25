@@ -45,9 +45,9 @@ const Login = ({func}) => {
 		})
 	}
 
-  return (
+	return (
 		<div>
-			<LoginStyle0> 
+			<LoginStyle0>
 				<DivStyle>Please login to continue</DivStyle>
 				<LoginStyle1>
 					<Blocker>
@@ -55,24 +55,24 @@ const Login = ({func}) => {
 						<label>Password</label>
 					</Blocker>
 					<Blocker>
-						<input id='username'/>
-						<input id='password'/>
+						<input/>
+						<input/>
 					</Blocker>
 				</LoginStyle1>
-				<DivStyle><ButtonStyle onClick={() => checkUser()}>Login</ButtonStyle></DivStyle>
+				<DivStyle><ButtonStyle onClick={func}>Login</ButtonStyle></DivStyle>
 			</LoginStyle0>
 		</div>
-  )
+	)
 }
 
 export default Login;
 
 const LoginStyle0 = styled.div `
-  margin: auto;
+	margin: auto;
 	margin-top: 8vh;
-  display: flex;
-  flex-direction: column;
-  width: 40vw;
+	display: flex;
+	flex-direction: column;
+	width: 40vw;
 `
 
 const LoginStyle1 = styled.div `
@@ -89,7 +89,7 @@ const Blocker = styled.div `
 `
 
 const DivStyle = styled.h1 `
-  margin: auto;
+	margin: auto;
 	margin-top: 0px;
 `
 
@@ -98,7 +98,6 @@ const ButtonStyle = styled.button `
 	height: 5vh;
 	margin-top: 5vh;
 `
-
 
 
 
