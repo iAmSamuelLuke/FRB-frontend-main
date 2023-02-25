@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react"
-import Lesson from "./elements/Lesson"
+import { useEffect, useState } from "react";
+import '../css/lessonpage.css';
 
 const LessonPage = ({id}) => {
 
     const [lesson, setLesson] = useState([])
+    const [current, setCurrent] = useState(0);
 
-    // Async fetch lesson object based on the id variable here
+    // fetch lesson object based on the id variable here
     const fetch_lesson = async () => {
         setLesson([
             {
@@ -15,6 +16,10 @@ const LessonPage = ({id}) => {
             {
                 question: 'second question',
                 answer: 'second answer'
+            },
+            {
+                question: 'third question',
+                answer: 'third answer'
             }
         ]);
     }
@@ -24,9 +29,19 @@ const LessonPage = ({id}) => {
         fetch_lesson();
     }, [])
 
+    const view_next = () => {
+        setCurrent(current + 1);
+    }
 
     return (
-        <div>This is lesson {id}</div>
+        <div>
+            {(lesson.length > 0 && current <= lesson.length) ?
+                <div className="lessonpage-wrapper">
+                    <div className="question">{lesson[current].question}?</div>
+                    <button className='' onClick={view_next}>Next Question</button>
+                </div> : null
+            }
+        </div>
     )
 }
 
