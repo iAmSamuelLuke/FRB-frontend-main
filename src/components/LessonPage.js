@@ -16,7 +16,9 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
 
         Object.keys(lesson_data).some(function (key){
             console.log(lesson_data[key].id);
-            if(lesson_data[key].id == id){
+
+            if(lesson_data[key].id === id){
+                console.log((lesson_data[key].content))
                 lid = JSON.parse(lesson_data[key].content);
                 console.log(lid);
                 fetch_lesson(lid);
@@ -67,7 +69,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
 
     const check_answer = () => {
         let attempt = document.getElementById('answer').value.toUpperCase();
-        if (attempt === lesson[current][0].toUpperCase()) {
+        if (attempt === lesson[current][1].toUpperCase()) {
             setCorrect('Correct!');
             setUserXP(currXP + 5);
             updateXP(username, currXP);
@@ -96,7 +98,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
         <div>
             {(lesson.length > 0 && current <= lesson.length) ? 
             <div className="lessonpage-wrapper">
-                <div className="lessonpage-question">{lesson[current][1]}?</div>
+                <div className="lessonpage-question">{lesson[current][0]}?</div>
                 <div className='lessonpage-answer-form'>
                     <div className='lessonpage-answer-label'>Type your answer: </div>
                     <input className='lessonpage-answer-input' id='answer'></input>
