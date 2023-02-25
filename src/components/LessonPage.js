@@ -52,8 +52,9 @@ const LessonPage = ({id, displayMain, username}) => {
     const check_answer = () => {
         let attempt = document.getElementById('answer').value.toUpperCase();
         let temp = document.getElementById('correct-answer').innerHTML;
-        if (attempt === lesson[current].answer.toUpperCase() && temp!=='Correct!') {
+        if (attempt === lesson[current].answer.toUpperCase()) {
             setCorrect('Correct!');
+             
             setXP(xp + 5);
         }
         else setCorrect('Sorry, try again');
