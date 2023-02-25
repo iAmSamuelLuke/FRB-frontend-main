@@ -98,6 +98,7 @@ const ButtonStyle = styled.button `
 	width: 30vw;
 	height: 5vh;
 	margin-top: 5vh;
+	background-color: blue;
 `
 
 
