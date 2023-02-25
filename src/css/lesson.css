@@ -1,0 +1,24 @@
+.lesson-graphic-wrapper {
+    width: 60px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgb(4, 160, 4);
+    align-items: center;
+    border: none;
+    box-shadow: 0 7px rgb(0, 132, 0);
+    margin-bottom: 32px;
+}
+
+.lesson-graphic-wrapper:hover {
+    background-color: rgb(5, 196, 5);
+    box-shadow: 0 7px rgb(0, 132, 0);
+}
+
+.lesson-graphic-wrapper:active {
+    transform: translateY(7px);
+    box-shadow: none;
+}
+
+.lesson-text-wrapper {
+    color: black;
+}
