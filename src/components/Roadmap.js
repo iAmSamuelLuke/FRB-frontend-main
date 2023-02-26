@@ -36,7 +36,7 @@ const RoadMap = ({displayLesson, displayProfile, lid, logout, username, userXp})
 			<div className='main-left-side-menu'>
 				<div className='roadmap-menu-wrapper'>
 					<div><button className='website-name'>Codelingo</button></div>
-					<div className='roadmap-left-side-link'>
+					{/* <div className='roadmap-left-side-link'>
 						<div className='profile-dropdown'>
 							<button className='profile-dropdown-button'>Learn</button>
 							<div className='profile-dropdown-content'>
@@ -44,7 +44,7 @@ const RoadMap = ({displayLesson, displayProfile, lid, logout, username, userXp})
 								<button className='profile-dropdown-link'>HTML</button>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
       <div style={{paddingTop: "4vh"}}>

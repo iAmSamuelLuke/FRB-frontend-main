@@ -120,7 +120,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP, username, userID}) => {
         <div>
             {(lesson.length > 0 && current <= lesson.length) ?
             <div className="lessonpage-wrapper">
-                <div className="lessonpage-question">{lesson[current][0]}?</div>
+                <div className="lessonpage-question">{lesson[current][0]}</div>
                 <div className='lessonpage-answer-form'>
                     <div className='lessonpage-answer-label'>Type your answer: </div>
                     <input className='lessonpage-answer-input' id='answer'></input>
