@@ -1,12 +1,36 @@
 import Unit from "./Unit";
 import '../css/roadmap.css';
 import XPbar from "./elements/XPbar";
+import {useEffect, useState} from "react";
 
 const RoadMap = ({displayLesson, displayProfile, lid, logout, username, userXp}) => {
 
 	// Temporary hardcode on coin value
 	const coins = 10;
+	const [userCoins, setUserCoins] = useState(0);
 
+
+	async function getCoins(){
+		let response = await fetch("http://localhost:8080/users/check1", {
+			method: 'GET',
+			headers: {"Content-Type" : "application/json"}
+		})
+
+		let data = await response.json();
+		console.log(data);
+
+		Object.keys(data).some(function (key) {
+			if (data[key].username === username) {
+				setUserCoins(data[key].coins);
+				return;
+			}
+		})
+	}
+
+	useEffect(() => {
+
+		getCoins();
+	}, [])
   return (
     <div className='roadmap-wrapper'>
 			<div className='main-left-side-menu'>
@@ -33,7 +57,7 @@ const RoadMap = ({displayLesson, displayProfile, lid, logout, username, userXp})
 						<div className='profile-dropdown'>
 							<div className={"holder"}>
 								
-							<button className='profile-dropdown-button1'>{username}</button>
+							<button className='profile-dropdown-button'>{username}</button>
 							</div>
 							<div className='profile-dropdown-content'>
 								<button className='profile-dropdown-link' onClick={displayProfile}>Profile</button>
@@ -43,7 +67,7 @@ const RoadMap = ({displayLesson, displayProfile, lid, logout, username, userXp})
 						<div className='profile-dropdown' style={{border: 'none'}}>
 							<button className='profile-dropdown-button' style={{backgroundColor: 'inherit', cursor: 'inherit'}}>
 								<img src="../images/coin.png" style={{maxHeight: '1vw', maxWidth: '1vw'}}></img>
-								<button className="coin-button-1">x{coins}</button>
+								<button className="coin-button-1">x{userCoins}</button>
 							</button>
 						</div>
 					</div>

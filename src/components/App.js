@@ -26,7 +26,6 @@ function App() {
 
   const[xp, setXP] = useState(0);
 
-  const[coins, setCoins] = useState(0);
 
   // The username that is currently logged in 
   const [user, setUser] = useState('');

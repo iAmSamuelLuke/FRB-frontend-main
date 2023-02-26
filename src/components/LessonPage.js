@@ -44,7 +44,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP, username, userID}) => {
     // This hook will call the fetch-lesson function when the page is first rendered
     useEffect(() => {
         // getContent(); use getContent if you are connected to sql
-        fetch_lesson();
+        getContent();
     }, [])
 
     const updateCoins = async (username) => {

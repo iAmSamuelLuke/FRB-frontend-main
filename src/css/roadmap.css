@@ -54,18 +54,6 @@
     cursor: pointer;
 }
 
-.profile-dropdown-button1 {
-    margin-right: 48px;
-    margin-top: 3px;
-    font-size: 26px;
-    border: none;
-    background-color: inherit;
-    font-weight: bold;
-    color: rgb(70, 69, 69);
-    width: 12vw;
-    height: 5vw;
-    cursor: pointer;
-}
 
 .coins{
     background-color: aquamarine;
