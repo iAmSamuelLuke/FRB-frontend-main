@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import '../css/lessonpage.css';
 
-const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
+const LessonPage = ({id, displayMain, setUserXP, currXP, username, userID}) => {
 
     let lid = [];
-    const username = "squanch";
 
     async function getContent() {
         let response = await fetch("http://localhost:8080/lessons/getAllLessons", {
@@ -35,20 +34,17 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
 
 
     // fetch lesson object based on the id variable here
-    const fetch_lesson = (lid) => {
-        var result = [];
+    const fetch_lesson = (/*lid*/) => {
 
-        for(var i in lid)
-            result.push([i, lid [i]]);
-
-        console.log(result);
-
-        setLesson(result);
+        setLesson([
+            ['q1', 'a1'], ['q2', 'a1'], ['q3', 'a1'], ['q4', 'a1']
+        ]);
     }
 
     // This hook will call the fetch-lesson function when the page is first rendered
     useEffect(() => {
-        getContent();
+        // getContent(); use getContent if you are connected to sql
+        fetch_lesson();
     }, [])
 
     const updateCoins = async (username) => {
@@ -95,7 +91,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
             setCanContinue(true);
             if (temp!=='Correct!') {
                 setUserXP(currXP + 5);
-                updateXP(username, currXP);
+                // updateXP(username, currXP); Leave this in if you are connected to SQL
             }
         }
         else {setCorrect('Sorry, try again'); setCanContinue(false); }
@@ -118,7 +114,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
 
     return (
         <div>
-            {(lesson.length > 0 && current <= lesson.length) ? 
+            {(lesson.length > 0 && current <= lesson.length) ?
             <div className="lessonpage-wrapper">
                 <div className="lessonpage-question">{lesson[current][0]}?</div>
                 <div className='lessonpage-answer-form'>
@@ -126,8 +122,10 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
                     <input className='lessonpage-answer-input' id='answer'></input>
                 </div>
                 <div className='lessonpage-button-pane'>
+                    <button className='lessonpage-button' onClick={() => displayMain(userID, username)} id='return-button'>Back to Main</button>
                     <button className='lessonpage-button' onClick={check_answer} id='check-button'>Check Answer</button>
-                    <button className='lessonpage-button' onClick={view_next} id='next-button' disabled={!cancontinue}>Next Question</button>
+                    <button className='lessonpage-button' onClick={view_next} id='next-button' disabled={!cancontinue} 
+                        style={{cursor: (cancontinue === false) ? 'not-allowed' : 'pointer'}}>Next Question</button>
                 </div>
                 <div id='correct-answer'>{correct}</div>
             </div> : null

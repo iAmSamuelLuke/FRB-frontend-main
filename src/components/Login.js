@@ -13,21 +13,21 @@ const Login = ({func, setUserXP, setUserCoins}) => {
 
 	async function checkUser(){
 		// Yeah I don't have SQL set up so I just comment out this part and call func regardless
-		 let username = document.getElementById('username').value;
-		 let password = document.getElementById('password').value;
+		//  let username = document.getElementById('username').value;
+		//  let password = document.getElementById('password').value;
 
-		 console.log(username)
-		 console.log(password)
+		//  console.log(username)
+		//  console.log(password)
 
-		 const userInfo = username
+		//  const userInfo = username
 
-		 let response = await fetch("http://localhost:8080/users/check1", {
-		 	method: 'GET',
-		 	headers: {"Content-Type" : "application/json"}
-		 })
+		//  let response = await fetch("http://localhost:8080/users/check1", {
+		//  	method: 'GET',
+		//  	headers: {"Content-Type" : "application/json"}
+		//  })
 
-		 let data = await response.json();
-		 console.log(data);
+		//  let data = await response.json();
+		//  console.log(data);
 
 		 Object.keys(data).some(function (key){
 		 	if(data[key].username === username){

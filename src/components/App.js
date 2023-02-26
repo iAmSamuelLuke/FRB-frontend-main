@@ -1,6 +1,7 @@
 import Login from './Login'
 import RoadMap from './Roadmap';
 import LessonPage from './LessonPage';
+import Profile from './Profile';
 
 import { useState } from 'react';
 
@@ -20,6 +21,9 @@ function App() {
   // Lesson that the user is ready for
   const [lesson_id, SetlessonID] = useState(null);
 
+  // Whether or not we are currently rendering the profile page
+  const [profile, setProfile] = useState(0);
+
   const[xp, setXP] = useState(0);
 
   const[coins, setCoins] = useState(0);
@@ -28,6 +32,7 @@ function App() {
   const [user, setUser] = useState('');
 
   const show_main = (id, username) => {
+    setProfile(0);
     setUser(username);
     setLesson(0);
     setLogin(0);
@@ -36,25 +41,35 @@ function App() {
   }
 
   const show_login = () => {
+    setProfile(0);
     setLesson(0);
     setMain(0);
     setLogin(1);
   }
 
   const show_lesson = (id) => {
+    setProfile(0);
     setMain(0);
     setLogin(0);
     setId(id);
     setLesson(1);
   }
 
+  const show_profile = () => {
+    setLogin(0);
+    setLesson(0);
+    setMain(0);
+    setProfile(1);
+  }
+
   console.log(xp);
 
   return (
     <div className="App">
-      {(login === 1) ? <Login func={show_main} setUserXP={setXP} setUserCoins={setCoins}/> : null}
-      {(main === 1) ? <RoadMap displayLesson={show_lesson} lid={lesson_id} logout={show_login} username={user} userXp={xp}/> : null}
-      {(lesson === 1) ? <LessonPage id={id} displayMain={show_main} setUserXP={setXP} currXP={xp} username={user}/> : null}
+      {(login === 1) ? <Login func={show_main} setUserXP={setXP}/> : null}
+      {(main === 1) ? <RoadMap displayLesson={show_lesson} displayProfile={show_profile} lid={lesson_id} logout={show_login} username={user} userXp={xp}/> : null}
+      {(lesson === 1) ? <LessonPage id={id} displayMain={show_main} setUserXP={setXP} currXP={xp} username={user} userID={lesson_id}/> : null}
+      {(profile === 1) ? <Profile /> : null}
     </div>
   );
 }
