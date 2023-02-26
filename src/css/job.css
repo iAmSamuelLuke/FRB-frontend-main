@@ -1,0 +1,12 @@
+.job-wrapper {
+    width: 45vw; 
+    cursor: pointer; 
+    margin: 3vw;
+    padding: 3vw;
+    border-radius: 3vw;
+    border: 3px solid lightblue;
+}
+
+.job-wrapper:hover {
+    background-color: lightblue;
+}

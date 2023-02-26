@@ -84,13 +84,29 @@
     display: flex;
 }
 
+.mega-button-desc {
+    width: 20vw;
+
+}
+
 .mega-button {
     width: 15vw;
     height: 10vw;
     margin-right: 5vh;
+    border: none;
+    background-color: rgb(4, 160, 4);
+    border-radius: 1vw;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    box-shadow: 0 5px rgb(0, 132, 0);
 }
 
-.mega-button-desc {
-    width: 20vw;
+.mega-button:hover {
+    background-color: rgb(5, 196, 5);
+}
 
+.mega-button:active {
+    box-shadow: none;
+	transform: translateY(5px);
 }

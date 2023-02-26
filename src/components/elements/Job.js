@@ -1,22 +1,12 @@
-import Card from 'react-bootstrap/Card';
-import jobsCss from '/Users/samluke/Desktop/FRB-frontend-main 2/src/css/jobs.css';
+import '../../css/job.css';
 
-const Job = ({title, city, salary, experience, description, employer}) => {
+const Job = ({title, location, salary, experience, description, postData}) => {
     return (
-        <div className={"jobs"}>
-            <div id={"title"}>
-                <p>{(experience !== null) ? experience : null} {title}</p>
-            </div>
-            <div id={"jobInfo"}>
-                <p>{employer}</p>
-                <p>Location: {city}</p>
-            </div>
-            <div className={"pay"}>
-                <p>Pay: {salary}</p>
-            </div>
-            <div className={"description"}>
-                <p className={"words"}>{description}</p>
-            </div>
+        <div className='job-wrapper' onClick={() => postData(description)}>
+            <p>{(experience !== null) ? experience : null} {title}</p>
+            <p>Location: {location}</p>
+            <p>Salary: {salary}</p>
+            <p>Click to see details!</p>
         </div>
 
 
