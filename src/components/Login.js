@@ -55,7 +55,7 @@ const Login = ({func, setUserXP, setUserCoins}) => {
 					<Blocker>
 						<input id='username' placeholder='Username' style={{paddingLeft:"7px"}}/>
 
-						<input id='password' placeholder='Password'/>
+						<input id='password' placeholder='Password'style={{paddingLeft:"7px"}} />
 					</Blocker>
 				</LoginStyle1>
 				<DivStyle><ButtonStyle onClick={() => checkUser()}>LOG IN</ButtonStyle></DivStyle>
