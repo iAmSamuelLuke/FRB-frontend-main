@@ -7,7 +7,7 @@ const XPbar = ({max, value}) => {
                 <h3>XP Progress</h3>
                 <progress id="progressBar" max={max} value={value%125}></progress>
                 <h4>
-                {value%125}xp of 125xp in Unit
+                {value%125} of 125xp in Level {(value - (value%125))/125}
                 </h4>
             </div>
         </div>

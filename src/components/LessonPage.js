@@ -35,7 +35,9 @@ const LessonPage = ({id, displayMain, setUserXP, currXP, username, userID}) => {
     const fetch_lesson = (/*lid*/) => {
 
         setLesson([
-            ['q1', 'a1'], ['q2', 'a1'], ['q3', 'a1'], ['q4', 'a1']
+            ['What are the three keywords used in the declaration of the main class method in Java?', 'a1'], 
+            ['Fill in the blank: <p>Hello World<__>', '/p'], ['<meta> is a self closing element: True or False?', 'true'], 
+            ['This program is cool: True or False?', 'true']
         ]);
     }
 
@@ -101,7 +103,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP, username, userID}) => {
         <div>
             {(lesson.length > 0 && current <= lesson.length) ?
             <div className="lessonpage-wrapper">
-                <div className="lessonpage-question">{lesson[current][0]}?</div>
+                <div className="lessonpage-question">{lesson[current][0]}</div>
                 <div className='lessonpage-answer-form'>
                     <div className='lessonpage-answer-label'>Type your answer: </div>
                     <input className='lessonpage-answer-input' id='answer'></input>
