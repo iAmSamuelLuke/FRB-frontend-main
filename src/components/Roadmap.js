@@ -48,8 +48,8 @@ const RoadMap = ({displayLesson, displayProfile, lid, logout, username, userXp})
 				</div>
 			</div>
       <div style={{paddingTop: "4vh"}}>
-        <Unit displayLesson={displayLesson} number={1} id={0} username={username}/>
-        <Unit displayLesson={displayLesson} number={2} id={1} username={username}/>
+        <Unit displayLesson={displayLesson} number={1} id={0} username={username} theme={"- Fundamentals"}/>
+        <Unit displayLesson={displayLesson} number={2} id={1} username={username} theme={"- Data Structures"}/>
       </div>
 			<div className='main-right-side-menu'>
 				<div className='profile-dropdown-wrapper'>
@@ -57,7 +57,7 @@ const RoadMap = ({displayLesson, displayProfile, lid, logout, username, userXp})
 						<div className='profile-dropdown'>
 							<div className={"holder"}>
 								
-							<button className='profile-dropdown-button'>{username}</button>
+							<button className='profile-dropdown-button1'>{username}</button>
 							</div>
 							<div className='profile-dropdown-content'>
 								<button className='profile-dropdown-link' onClick={displayProfile}>Profile</button>
@@ -66,7 +66,7 @@ const RoadMap = ({displayLesson, displayProfile, lid, logout, username, userXp})
 						</div>
 						<div className='profile-dropdown' style={{border: 'none'}}>
 							<button className='profile-dropdown-button' style={{backgroundColor: 'inherit', cursor: 'inherit'}}>
-								<img src="../images/coin.png" style={{maxHeight: '1vw', maxWidth: '1vw'}}></img>
+								<img className={"coinImg"} src="../images/coin.png" style={{maxHeight: '40px', maxWidth: '40px'}}></img>
 								<button className="coin-button-1">x{userCoins}</button>
 							</button>
 						</div>

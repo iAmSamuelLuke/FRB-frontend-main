@@ -34,17 +34,21 @@ const LessonPage = ({id, displayMain, setUserXP, currXP, username, userID}) => {
 
 
     // fetch lesson object based on the id variable here
-    const fetch_lesson = (/*lid*/) => {
+    const fetch_lesson = (lid) => {
+        var result = [];
 
-        setLesson([
-            ['q1', 'a1'], ['q2', 'a1'], ['q3', 'a1'], ['q4', 'a1']
-        ]);
+        for(var i in lid)
+            result.push([i, lid [i]]);
+
+        console.log(result);
+
+        setLesson(result);
     }
 
     // This hook will call the fetch-lesson function when the page is first rendered
     useEffect(() => {
-        // getContent(); use getContent if you are connected to sql
-        getContent();
+        getContent();// use getContent if you are connected to sql
+        //fetch_lesson();
     }, [])
 
     const updateCoins = async (username) => {
@@ -91,7 +95,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP, username, userID}) => {
             setCanContinue(true);
             if (temp!=='Correct!') {
                 setUserXP(currXP + 5);
-                // updateXP(username, currXP); Leave this in if you are connected to SQL
+                updateXP(username, currXP);
             }
         }
         else {setCorrect('Sorry, try again'); setCanContinue(false); }
