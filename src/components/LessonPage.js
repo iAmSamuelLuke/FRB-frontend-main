@@ -32,6 +32,8 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
     const [xp, setXP] = useState(0);
     const [cancontinue, setCanContinue] = useState(false);
 
+
+
     // fetch lesson object based on the id variable here
     const fetch_lesson = (lid) => {
         var result = [];
@@ -49,6 +51,21 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
         getContent();
     }, [])
 
+    const updateCoins = async (username) => {
+
+        let user = {username};
+
+        let response = await fetch('http://localhost:8080/users/setCoins', {
+            method: 'POST',
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify(user)
+        });
+
+        let data = await response.json();
+        console.log(data);
+
+    }
+
     const view_next = () => {
         let temp = document.getElementById('next-button').innerHTML;
         let temp2 = document.getElementById('correct-answer').innerHTML;
@@ -59,6 +76,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
             console.log(current)
             console.log(lesson.length)
             document.getElementById('next-button').innerHTML = 'Finish Lesson';
+            updateCoins(username)
         }
         else if (correct === 'Correct!') {
             console.log(temp2);
@@ -81,10 +99,7 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
             }
         }
         else {setCorrect('Sorry, try again'); setCanContinue(false); }
-
     }
-
-
 
     const updateXP = async (username, xp) => {
 

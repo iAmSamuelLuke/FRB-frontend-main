@@ -27,7 +27,10 @@ const RoadMap = ({displayLesson, lid, logout, username, userXp}) => {
 				<div className='profile-dropdown-wrapper'>
 					<div style={{height: "40vh"}}>
 						<div className='profile-dropdown'>
-							<button className='profile-dropdown-button'>{username}</button>
+							<div className={"holder"}>
+								
+							<button className='profile-dropdown-button1'>{username}</button>
+							</div>
 							<div className='profile-dropdown-content'>
 								<button className='profile-dropdown-link'>Profile</button>
 								<button className='profile-dropdown-link' onClick={logout}>Log Out</button>

@@ -23,7 +23,7 @@
 }
 
 .profile-dropdown {
-    margin-left: 12vw;
+
     width: fit-content;
     float: right;
 }
@@ -39,10 +39,12 @@
 }
 
 .profile-dropdown:hover .profile-dropdown-button {
+
     background-color: lightgrey;
 }
 
 .profile-dropdown-button {
+    font-size: 26px;
     border: none;
     background-color: inherit;
     font-weight: bold;
@@ -50,6 +52,23 @@
     width: 12vw;
     height: 5vw;
     cursor: pointer;
+}
+
+.profile-dropdown-button1 {
+    margin-right: 48px;
+    margin-top: 3px;
+    font-size: 26px;
+    border: none;
+    background-color: inherit;
+    font-weight: bold;
+    color: rgb(70, 69, 69);
+    width: 12vw;
+    height: 5vw;
+    cursor: pointer;
+}
+
+.coins{
+    background-color: aquamarine;
 }
 
 .profile-dropdown-link {
@@ -73,6 +92,7 @@
     background-color: inherit;
     height: 5vw;
     margin-bottom: 2vw;
+    margin-top: 8px;
     width: 20vw;
     font-weight: bold;
     font-size: 2.5vw;
