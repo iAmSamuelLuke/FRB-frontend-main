@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Login = ({func, setUserXP}) => {
+const Login = ({func, setUserXP, setUserCoins}) => {
 
   const print_creds = () => {
     var username = document.getElementById('username').value;
@@ -38,20 +38,18 @@ const Login = ({func, setUserXP}) => {
 		 				console.log(data[key].lesson_id)
 		 				func(data[key].lesson_id, data[key].username);
 						 setUserXP(data[key].xp);
-
+						 setUserCoins(data[key].coins);
 		 				return;
 					}
 		 		}
 		 	}
 		 })
-		// func is called with data[key].lesson_id in the fetch above, 1 is a placeholder
-		//func(1, 'Peter');
 	}
 
   	return (
 		<div>
 			<LoginStyle0> 
-				<DivStyle>Please login to continue</DivStyle>
+				<DivStyle>Log in</DivStyle>
 				<LoginStyle1>
 					<Blocker>
 						<label>Username</label>
@@ -62,7 +60,7 @@ const Login = ({func, setUserXP}) => {
 						<input id='password'/>
 					</Blocker>
 				</LoginStyle1>
-				<DivStyle><ButtonStyle onClick={() => checkUser()}>Login</ButtonStyle></DivStyle>
+				<DivStyle><ButtonStyle onClick={() => checkUser()}>Log in</ButtonStyle></DivStyle>
 			</LoginStyle0>
 		</div>
   )

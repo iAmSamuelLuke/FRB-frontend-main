@@ -113,8 +113,8 @@ const LessonPage = ({id, displayMain, setUserXP, currXP}) => {
 
         let data = await response.json();
         console.log(data);
-
     }
+
 
     return (
         <div>
