@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import css from "/Users/samluke/Desktop/FRB-frontend-main 2/src/css/login.css"
 
 const Login = ({func, setUserXP, setUserCoins}) => {
 
@@ -48,18 +49,16 @@ const Login = ({func, setUserXP, setUserCoins}) => {
   	return (
 		<div>
 			<LoginStyle0> 
-				<DivStyle>Log in</DivStyle>
+				<DivStyle>Please log in</DivStyle>
 				<LoginStyle1>
+
 					<Blocker>
-						<label>Username</label>
-						<label>Password</label>
-					</Blocker>
-					<Blocker>
-						<input id='username'/>
-						<input id='password'/>
+						<input id='username' placeholder='Username' style={{paddingLeft:"7px"}}/>
+
+						<input id='password' placeholder='Password'/>
 					</Blocker>
 				</LoginStyle1>
-				<DivStyle><ButtonStyle onClick={() => checkUser()}>Log in</ButtonStyle></DivStyle>
+				<DivStyle><ButtonStyle onClick={() => checkUser()}>LOG IN</ButtonStyle></DivStyle>
 			</LoginStyle0>
 		</div>
   )
@@ -84,9 +83,13 @@ const LoginStyle1 = styled.div `
 const Blocker = styled.div `
 	display: flex;
 	flex-direction: column;
-	height: 15vh;
+	height: 18vh;
 	width: 15vw;
 	justify-content: space-around;
+	row-gap: 20px;
+	margin-top: 13px;
+	margin-right: 80px;
+	
 `
 
 const DivStyle = styled.h1 `
@@ -95,14 +98,14 @@ const DivStyle = styled.h1 `
 `
 
 const ButtonStyle = styled.button `
-	width: 30vw;
-	height: 8vh;
-	margin-top: 5vh;
+	width: 23vw;
+	height: 7vh;
+	margin-top: 4vh;
 	background-color: rgb(48, 48, 218);
 	border: none;
 	border-radius: 2vh;
 	color: white;
-	font-size: 5vh;
+	font-size: 2vh;
 	font-weight: bold;
 	font-family: sans-serif;
 	box-shadow: 0 7px rgb(25, 25, 180);
