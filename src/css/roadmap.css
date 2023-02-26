@@ -23,7 +23,7 @@
 }
 
 .profile-dropdown {
-    margin-left: 12vw;
+    /* margin-left: 12vw; */
     width: fit-content;
     float: right;
 }
@@ -88,6 +88,15 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
+
+.coin-button-1 {
+    background-color: inherit;
+    font-weight: bold;
+    color: rgb(70, 69, 69);
+    border: none;
+    margin-left: 1vh;
+}
+
 
 
 

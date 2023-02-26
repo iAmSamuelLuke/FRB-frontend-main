@@ -2,7 +2,11 @@ import Unit from "./Unit";
 import '../css/roadmap.css';
 import XPbar from "./elements/XPbar";
 
-const RoadMap = ({displayLesson, lid, logout, username, userXp}) => {
+const RoadMap = ({displayLesson, displayProfile, lid, logout, username, userXp}) => {
+
+	// Temporary hardcode on coin value
+	const coins = 10;
+
   return (
     <div className='roadmap-wrapper'>
 			<div className='main-left-side-menu'>
@@ -25,16 +29,22 @@ const RoadMap = ({displayLesson, lid, logout, username, userXp}) => {
       </div>
 			<div className='main-right-side-menu'>
 				<div className='profile-dropdown-wrapper'>
-					<div style={{height: "40vh"}}>
+					<div style={{height: "80vh"}}>
 						<div className='profile-dropdown'>
 							<button className='profile-dropdown-button'>{username}</button>
 							<div className='profile-dropdown-content'>
-								<button className='profile-dropdown-link'>Profile</button>
+								<button className='profile-dropdown-link' onClick={displayProfile}>Profile</button>
 								<button className='profile-dropdown-link' onClick={logout}>Log Out</button>
 							</div>
 						</div>
+						<div className='profile-dropdown' style={{border: 'none'}}>
+							<button className='profile-dropdown-button' style={{backgroundColor: 'inherit', cursor: 'inherit'}}>
+								<img src="../images/coin.png" style={{maxHeight: '1vw', maxWidth: '1vw'}}></img>
+								<button className="coin-button-1">x{coins}</button>
+							</button>
+						</div>
 					</div>
-					<div style={{margin: 'auto', width: 'fit-content'}}><XPbar max={125} value={userXp % 125}/></div>
+					<div style={{margin: 'auto', width: 'fit-content'}}><XPbar max={125} value={userXp}/></div>
 				</div>
 			</div>
     </div>

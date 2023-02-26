@@ -1,7 +1,7 @@
 .lessonpage-wrapper {
     width: 40vw;
     margin: auto;
-    margin-top: 18vh;
+    margin-top: 25vh;
 }
 
 .lessonpage-question {
@@ -24,16 +24,53 @@
 }
 
 .lessonpage.answer-input {
-    width: 20vw;
+    width: 100%;
 }
 
 .lessonpage-button-pane {
-    width: 25vw;
-    margin: auto;
+    width: 35vw;
     display: flex;
     justify-content: space-between;
+    margin-top: 5vh;
+    margin-bottom: 6vh;
 }
 
 .lessonpage-button {
     width: 10vw;
+    height: 4vw;
+    border: none;
+    background-color: rgb(48, 48, 218);
+    border-radius: 1vw;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    box-shadow: 0 5px rgb(25, 25, 180);
 }
+
+.lessonpage-button:hover {
+    background-color: rgb(68, 68, 248);
+}
+
+.lessonpage-button:active {
+    box-shadow: none;
+	transform: translateY(5px);
+}
+    /* width: 30vw;
+	height: 8vh;
+	margin-top: 5vh;
+	background-color: rgb(48, 48, 218);
+	border: none;
+	border-radius: 2vh;
+	color: white;
+	font-size: 5vh;
+	font-weight: bold;
+	font-family: sans-serif;
+	box-shadow: 0 7px rgb(25, 25, 180);
+	cursor: pointer;
+	:hover {
+		background-color: rgb(68, 68, 248);
+	}
+	:active {
+		box-shadow: none;
+		transform: translateY(7px);
+	}    */
