@@ -22,7 +22,7 @@ const Profile = ({displayJobs, displayMindMap, displayMain, name, XP, experience
 							<button className='mega-button' onClick={displayJobs}>
 								Jobs
 							</button>
-							<p className='mega-button-desc'>Look through job opportunities that are in line with the language(s) you have been studying</p>
+							<p className='mega-button-desc'>More than a casual learner? Look through job opportunities that are in line with the language(s) you have been studying</p>
 						</div>
 						<div className='mega-button-wrapper'>
 							<button className='mega-button' onClick={displayMindMap}>

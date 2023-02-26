@@ -1,11 +1,12 @@
-const Job = ({title, city, salary, experience, description, employer}) => {
+import '../../css/job.css';
+
+const Job = ({title, location, salary, experience, description, postData}) => {
     return (
-        <div>
+        <div className='job-wrapper' onClick={() => postData(description)}>
             <p>{(experience !== null) ? experience : null} {title}</p>
-            <p>{employer}</p>
-            <p>Location: {city}</p>
-            <p>Pay: {salary}</p>
-            <p>{description}</p>
+            <p>Location: {location}</p>
+            <p>Salary: {salary}</p>
+            <p>Click to see details!</p>
         </div>
     );
 }
