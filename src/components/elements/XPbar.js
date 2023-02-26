@@ -1,6 +1,8 @@
 import '../../css/xpbar.css';
 
 const XPbar = ({max, value}) => {
+    // max = maximum amount of XP in a level
+    // value=amount of XP the player has. NOT amount of xp the player has in that level
     return (
         <div className='xpbar-wrapper'>
             <div className="xp-bar">
